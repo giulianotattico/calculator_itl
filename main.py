@@ -1,22 +1,22 @@
-#Импорт
+# Import
 from flask import Flask, render_template
 
 
 app = Flask(__name__)
 
 def result_calculate(size, lights, device):
-    #Переменные для энергозатратности приборов
+    # Variables that allow for the calculation of the appliances' energy draw
     home_coef = 100
     light_coef = 0.04
     devices_coef = 5   
     return size * home_coef + lights * light_coef + device * devices_coef 
 
-#Первая страница
+# The first page
 @app.route('/')
 def index():
     return render_template('index.html')
 
-#Вторая страница
+# The second page
 @app.route('/<size>')
 def lights(size):
     return render_template(
@@ -24,7 +24,7 @@ def lights(size):
                             size=size
                            )
 
-#Третья страница
+# The third page
 @app.route('/<size>/<lights>')
 def electronics(size, lights):
     return render_template(
