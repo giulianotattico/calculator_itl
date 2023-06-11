@@ -5,17 +5,17 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 def result_calculate(size, lights, device):
-    #Переменные для энергозатратности приборов
+    # Variables that allow for the calculation of the appliances' energy draw
     home_coef = 100
     light_coef = 0.04
     devices_coef = 5   
     return size * home_coef + lights * light_coef + device * devices_coef 
 
-#Первая страница
+# The first page
 @app.route('/')
 def index():
     return render_template('index.html')
-#Вторая страница
+# The second page
 @app.route('/<size>')
 def lights(size):
     return render_template(
@@ -23,7 +23,7 @@ def lights(size):
                             size=size
                            )
 
-#Третья страница
+# The third page
 @app.route('/<size>/<lights>')
 def electronics(size, lights):
     return render_template(
@@ -32,7 +32,7 @@ def electronics(size, lights):
                             lights = lights                           
                            )
 
-#Расчет
+# Calculation
 @app.route('/<size>/<lights>/<device>')
 def end(size, lights, device):
     return render_template('end.html', 
@@ -41,20 +41,20 @@ def end(size, lights, device):
                                                     int(device)
                                                     )
                         )
-#Форма
+# The form
 @app.route('/form')
 def form():
     return render_template('form.html')
 
-#Результаты формы
+#The form's results
 @app.route('/submit', methods=['POST'])
 def submit_form():
-    #Создай переменные для сбора информации
+    # Declare variables for the data collection
     name = request.form['name']
 
-    # здесь вы можете сохранить данные или отправить их по электронной почте
+    # You can save your data or email it
     return render_template('form_result.html', 
-                           #Помести переменные
+                           # Place the variables here
                            name=name,
                            )
 
