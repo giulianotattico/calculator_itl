@@ -8,13 +8,13 @@
   >
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="../../static/css/style.css"> 
-  <title>Расчет энергоэффективности умного дома</title>
+  <title>Energy efficiency calculator for smart homes</title>
 </head>
 <body>
   <header class="header">
     <div class="header__text">
-      <h1>Расчитай энергоэффективность своего дома!</h1>
-      <p>Реши проблему излишнего электропотребления самостоятельно!</p>
+      <h1>Calculate the energy efficiency of your home!</h1>
+      <p>Take the initiative and resolve the problem of excessive energy consumption!</p>
     </div>
   </header>
   <main>
@@ -24,29 +24,29 @@
         <ul class="user-info">
             <li class="user-info__item">
 
-                <label for="name">Ф.И.О</label>
-                <input type="text" name="name" id="name" placeholder="Введите ваше ФИО" required>
+                <label for="name">Your name</label>
+                <input type="text" name="name" id="name" placeholder="Enter your full name" required>
             </li>
             <li class="user-info__item">
-                <!-- Задание 4. Создай input для email пользователя -->
+                <!-- Assignment 4. Create an input field for the user's email -->
                 
             </li>
         </ul>
-        <!--Поля для адреса и даты-->
+        <!--Fields for the address and the name-->
         <ul class="address-date">
             <li class="user-info__item">
 
-                <label for="address">Укажите ваш адрес</label>
-                <input type="text" name="address" id="address" placeholder="Ваш адрес" required>
+                <label for="address">Specify your address</label>
+                <input type="text" name="address" id="address" placeholder="Your address" required>
             </li>
             <li class="user-info__item">
 
-                <label for="date">Укажите дату приезда наших служб</label>
+                <label for="date">Specify the date when you are comfortable with our specialists arriving</label>
                 <input type="date" name="date" id="date" required>
             </li>
         </ul>
     </div>
-    <button class="button" type="submit">Готово!</button>
+    <button class="button" type="submit">Ready!</button>
     </form>
     {% endblock %}
   </main>
